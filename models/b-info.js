@@ -1,4 +1,4 @@
-const players = [
+module.exports = [
     {
     name: 'LeBron James',
     position: 'Small Forward',
@@ -55,5 +55,3 @@ const players = [
         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdDPNm11Rq3vGiQx7kjunXHGhoHS9LJ9lzY0S_vqAs54qYQZv4RcN-vlyz6TYbinxG5Lw&usqp=CAU',
     }
 ]
-
-console.log(players)

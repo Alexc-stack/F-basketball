@@ -12,6 +12,6 @@ const playerSchema = new mongoose.Schema({
     weight: Number,
 });
 
-const playerCollection = mongoose.model('player', playerSchema);
+const playerCollection = mongoose.model('Player', playerSchema);
 
-module.export = playerCollection
+module.exports = playerCollection;

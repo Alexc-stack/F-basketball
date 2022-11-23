@@ -10,26 +10,90 @@
         body{
             background-color: brown;
         }
-        div {
+        header {
+            text-align: center;
+        }
+        .low {
             position: relative;
-            top: 600px;
+            top: 500px;
             text-align: center;
         }
         .navbar {
             background-color: black;
         }
+        .all-browsers {
+            margin: 0;
+            padding: 5px;
+            background-color: lightgray;
+        }
+
+        .all-browsers > h1, .browser {
+            margin: 30px;
+            padding: 5px;
+        }
+
+        .browser {
+            background: white;
+        }
+
+        .browser > h2, p {
+            margin: 14px;
+            font-size: 90%;
+        }
+        .news {
+            position: relative;
+            top: 75px;
+        }
     </style>
 </head>
 <body>
+
+               <!----- BOOTSRAP NAV BAR -------->
+
     <nav class="nav nav-pills nav-fill navbar">
-        <a class="nav-link active" aria-current="page" href="#">HOME</a>
-        <a class="nav-link" href="#">EDIT ROSTER</a>
+        <a class="nav-link active" aria-current="page" href="ff/start">HOME</a>
+        <a class="nav-link" href="/ff/">EDIT ROSTER</a>
         <a class="nav-link" href="#">VIEW ROSTER</a>
         <a class="nav-link" href="#" >SHOWCASE</a>
       </nav>
-    <div>
+
+      <!-------------- NBA NEWS ----------->
+
+      <header>
+        <h1>WELCOME TO FANTASY BASKETBALL</h1>
+       </header>
+       <div class="news">
+       <h1>This is the news panel, that gives you up to date news</h1>
+        <article class="all-browsers">
+            <h1>NEWS</h1>
+            <article class="browser">
+                <h2>Steph Curry</h2>
+                <p>In 15 games, Curry is averaging 32.2 points, 6.7 rebounds and 6.6 assists per game, while shooting 52.8 percent from the field, 44.3 percent from 3-point land and 90.9 percent from the free-throw line.</p>
+            </article>
+            <article class="browser">
+                <h2>Damian Lillard (calf) out 1-2 weeks with Grade 1 strain</h2>
+                <p>MRI reveals a new strain in the same leg Portland's star previously injured this season, which cost him 4 games.</p>
+            </article>
+            <article class="browser">
+                <h2>Luka Doncic earns 50th career triple-double</h2>
+                <p>The Mavericks superstar joins elite company at an early age with his latest triple-double.</p>
+            </article>
+            <article class="browser">
+                <h2>Bucks' Giannis Antetokounmpo explains ladder incident after loss to 76ers</h2>
+                <p>A verbal exchange between the Milwaukee superstar and an arena worker at Wells Fargo Center led to a 12-foot ladder falling to the ground.</p>
+            </article>
+            <article class="browser">
+                <h2>Kyrie Irving rejoins Nets, seeks to keep focus on basketball</h2>
+                <p>Irving apologizes 'deeply' for his actions and returns for Brooklyn on Sunday against Memphis, re-joining the starting lineup.</p>
+            </article>
+        </article>
+       </div>
+
+        <!--------- CHOOSE PLAYER -------->
+
+    <div class="low">
         <h3>Choose your NBA player</h3>
-        <form class="form-control form-control-lg" type="text" aria-label=".form-control-lg example" action="/ff" method="POST">
+        <form action="/ff" method="POST" class="form-control form-control-lg" type="text" aria-label=".form-control-lg example" action="/ff" method="POST">
            Player Name: <input type="text" name="name" />
         <input type="submit" value="Choose Player"/>
         </form>
