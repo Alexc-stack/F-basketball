@@ -28,10 +28,12 @@ app.get('/ff', (req, res)=>{
     });
 });
 
+//player.collection.drop()
 
-
-
-
+// player.create(playerinfo, (err, data) => {
+//         if (err) console.log (err.message)
+//        console.log("add provided books and author data")
+// });
 
 
 
