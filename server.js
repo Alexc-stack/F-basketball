@@ -3,8 +3,10 @@ const app = express();
 const mongoose = require('mongoose');
 const player = require('./models/schema.js');
 const playerinfo = require('./models/b-info.js');
+const methodOverride = require('method-override');
 
 app.use(express.urlencoded({extended: true}));
+app.use(methodOverride('_method'));
 
 
 
@@ -27,6 +29,41 @@ app.get('/ff', (req, res)=>{
         });
     });
 });
+
+app.get('/ff/:id', (req, res)=>{
+    player.findById(req.params.id, (err, foundPlayer)=>{
+        res.render('show.ejs', {
+            player:foundPlayer
+        });
+    });
+});
+
+app.get('/showcase', (req, res)=>{
+    player.findById(req.params.id, (err, foundPlayer)=>{
+    res.render('showcase.ejs');
+    });
+});
+
+app.delete('/ff/:id', (req, res)=>{
+    player.findByIdAndRemove(req.params.id, (err, data)=>{
+        res.redirect('/ff');
+    });
+});
+
+app.get('/ff/:id/edit', (req, res)=>{
+    player.findById(req.params.id, (err, foundPlayer)=>{
+        res.render('edit.ejs', {
+            player: foundPlayer
+        });
+    });
+});
+
+app.put('/ff/:id', (req, res)=>{
+    player.findByIdAndUpdate(req.params, req.body, {new:true}, (err, updatedMobel)=>{
+        res.redirect('/ff');
+    });
+});
+
 
 //player.collection.drop()
 

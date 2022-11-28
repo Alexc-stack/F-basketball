@@ -10,6 +10,7 @@ const playerSchema = new mongoose.Schema({
     fgp: Number,
     height: String,
     weight: Number,
+    rating: Number,
 });
 
 const playerCollection = mongoose.model('Player', playerSchema);

@@ -8,7 +8,21 @@
     <title>Edit roster</title>
     <style>
         body{
-            background-color: brown;
+           background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOijrZF3pYX-7zXTCnjIUhvNH2xZ98lXgrNw&usqp=CAU'); 
+        }
+        .album {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOijrZF3pYX-7zXTCnjIUhvNH2xZ98lXgrNw&usqp=CAU');
+        }
+        .card-body {
+            background-color: black;
+        }
+        h1, h2 {
+            color: whitesmoke;
+            position: relative;
+            top: 30px;
+        }
+        p {
+            color: aliceblue;
         }
         header {
             text-align: center;
@@ -22,8 +36,7 @@
     <nav class="nav nav-pills nav-fill navbar">
         <a class="nav-link" aria-current="page" href="start">HOME</a>
         <a class="nav-link active" href="#">EDIT ROSTER</a>
-        <a class="nav-link" href="#">VIEW ROSTER</a>
-        <a class="nav-link" href="#" >SHOWCASE</a>
+        <a class="nav-link" href="/showcase" >SHOWCASE</a>
       </nav>
       <header>
         <h1>EDIT ROSTER</h1>
@@ -35,13 +48,17 @@
                 <% for (let i = 0; i < player.length; i++) { %>
                     <div class="col-md-4">
                         <div class="card border-primary mb-3 mb-4 box-shadow">
-                            <img class="card-img-top" src="<%= player[i].img %>" alt="<%= player[i].name %>" style="height: 225px; width: 100%; display: block;">
+                            <a href="/ff/<%=player[i].id; %>"><img class="card-img-top" src="<%= player[i].img %>" alt="<%= player[i].name %>" style="height: 225px; width: 100%; display: block;"></a>
                             <div class="card-body">
                                 <p class="card-text"><%= player[i].name %></p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Delete</button> -->
-                                        
+                                        <form action="/ff/<%=player[i].id; %>?_method=DELETE" method="POST">
+                                            <input type="submit" value="DELETE"/>
+                                            <a href="/ff/<%=player[i].id; %>/edit">Edit</a>
+
+                                        </form>
                                     </div>
                                 </div>
                             </div>

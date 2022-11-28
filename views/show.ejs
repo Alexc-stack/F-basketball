@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Players page</title>
+</head>
+<body>
+    <style>
+        .navbar {
+    background-color: black;
+    }
+    div {
+        position: relative;
+        left: 500px;
+      
+    }
+    body{
+        background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuS18NCcdw93ZfiN9X0agRdA6J88QQTntWYw&usqp=CAU');
+    }
+    .color {
+        background-color: black;
+    }
+    p {
+        color:aliceblue;
+    }
+    
+
+    </style>
+         <!------NAVBAR--------->
+
+    <nav class="nav nav-pills nav-fill navbar">
+        <a class="nav-link" aria-current="page" href="start">HOME</a>
+        <a class="nav-link active" href="/ff/">EDIT ROSTER</a>
+        <a class="nav-link" href="#" >SHOWCASE</a>
+      </nav>
+      <div class="card border-primary mb-3 color" style="width: 50rem;">
+        <img src="<%=player.img; %>" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text name"><%=player.name; %> </p>
+          <p class="card-text">POSITION: <%=player.position; %></p>
+          <p class="card-text">PPG: <%=player.ppg; %></p>
+          <p class="card-text">RPG: <%=player.rbg; %></p>
+          <p class="card-text">APG: <%=player.apg; %></p>
+          <p class="card-text">FG%: <%=player.fgp; %></p>
+          <p class="card-text">HEIGHT: <%=player.height; %></p>
+          <p class="card-text">WEIGHT: <%=player.weight; %></p>
+          <p class="card-text">RATING: <%=player.rating; %></p>
+        </div>
+      </div>
+</body>
+</html>
